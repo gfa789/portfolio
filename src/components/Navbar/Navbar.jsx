@@ -37,6 +37,21 @@ const Navbar = () => {
     const toggleTheme = () => {
         setTheme(theme === 'light' ? 'dark' : 'light');
       };
+
+    const [isWide, setIsWide] = useState(window.innerWidth > 992); 
+
+    useEffect(() => {
+        const handleResize = () => {
+        setIsWide(window.innerWidth >= 992); 
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        // Cleanup the event listener on component unmount
+        return () => {
+        window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     
     const handleClick = () => setClick(!click);
     const close = () => setClick(false);
@@ -55,7 +70,7 @@ const Navbar = () => {
          const currentScrollPos = window.scrollY;
          const isOffset = window.scrollY >= navbarOffset +100; // Offset value of 100px
          const scrollDirection = (prevScrollPos.current > currentScrollPos) ? 'up' : 'down';
-         const shouldHideNavbar = scrollDirection === 'down' && currentScrollPos > 510;
+         const shouldHideNavbar = scrollDirection === 'down' && currentScrollPos > 510 && isWide;
          console.log(scrollDirection, prevScrollPos, currentScrollPos);
          prevScrollPos.current = currentScrollPos
          setIsOffsetReached(isOffset);

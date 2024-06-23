@@ -12,9 +12,9 @@
 
 .team-content{
     gap: 4rem;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* display: flex; */
 }
 
 
@@ -57,7 +57,7 @@
     }
 }
 
-@media screen and ((min-width:1400px)) {
+/* @media screen and ((min-width:1400px)) {
     .team-content{
         grid-template-columns: repeat(5,1fr);
     }
@@ -67,7 +67,7 @@
     .team-content{
         grid-template-columns: repeat(6,1fr);
     }
-}
+} */
 /* 
 .logo{
     background-color: white;
