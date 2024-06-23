@@ -1,0 +1,107 @@
+/* EmailPopup.css */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 12;
+  }
+  
+  .title{
+    padding-bottom:25px;
+    padding-top:50px;
+  }
+  
+  .popup-content {
+    justify-content: center;
+    align-items: center;
+    background: var(--dark-color);
+    padding: 20px;
+    border-radius: 5px;
+    /* width: 50%; */
+    height: 100%;
+    /* max-width: 90%; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 11;
+    /* translate: 0 60px; */
+    border: 5px solid var(--white-color);
+  }
+  
+  @media screen and (min-width: 900px) {
+    .popup-content {width: 600px;
+      height:auto;
+    max-height: 90%;}
+
+    
+  }
+
+  .form-div{
+    width:90%;
+  }
+
+  form div {
+    margin-bottom: 10px;
+    /* width: 90%; */
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100%;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--darker-color);
+    color: var(--whiter-color);
+    border: 1px solid var(--white-color);
+    border-radius: 5px;
+  }
+
+  form textarea {
+    height: 150px; /* Increase the height of the message box */
+  }
+  
+  form button {
+    margin-right: 10px;
+  }
+  
+  .no-scroll {
+    overflow-y: hidden;
+  }
+
+  .button-1 {
+    padding: 10px;
+    padding-bottom: 40px;
+    display: inline-block;
+  }
+
+  .error {
+    color:red;
+    opacity: 0%;
+  }
+
+  .email-error{
+    opacity: 100%;
+  }
+
+
+  .subject-error{
+    opacity: 100%;
+  }
+
+  .message-error{
+    opacity: 100%;
+  }

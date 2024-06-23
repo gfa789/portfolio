@@ -1,0 +1,9 @@
+.loading-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px; /* Customize the height of the loading bar */
+    background-color: #000; /* Customize the color of the loading bar */
+    width: 0;
+    transition: width 0.3s; /* Add a transition effect for a smooth animation */
+  }

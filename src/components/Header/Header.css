@@ -1,0 +1,32 @@
+.header{
+    padding-top:80px;
+    flex-direction: column;
+    background-color: var(--dark-color);
+    padding-bottom:0px;
+}
+
+.header-content-right img {
+    max-width: 800px;
+    max-height: 500px;
+    width: auto;
+}
+
+.header-title{
+    margin-bottom: 2.5rem;
+}
+
+@media screen  and (min-width:992px) {
+    .header-content{
+        grid-template-columns: 2fr 3fr;
+        align-items: center;
+        text-align: left;
+        column-gap: 6rem;
+    }
+}
+
+.gradient-div{
+    background-image: linear-gradient(to top, var(--dark-color), var(--medium-color));
+    /* padding: 100px; */
+    padding-top: 0px;
+    min-height: 150px;
+}

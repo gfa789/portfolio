@@ -1,0 +1,35 @@
+.gradient-div-1{
+    background-image: linear-gradient(to bottom, var(--dark-color), var(--orange-color));
+    padding: 100px;
+    min-height: 150px;
+}
+
+.about-me {
+    padding-top:0px;
+    background-color: var(--orange-color);
+}
+
+.about-me-item{
+    padding: 6rem 0;
+    gap: 6rem;
+    color: var(--white-color);
+}
+
+.about-me-item img{
+    max-width: 520px;
+}
+
+.about-me-item .text{
+    max-width: 680px;
+}
+
+@media screen and (min-width: 992px){
+    .about-me-item{
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        text-align: left;
+    }
+    .about-me-item:nth-child(even) .about-me-item-left{
+        order: 2;
+    }
+}
