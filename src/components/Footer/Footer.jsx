@@ -28,8 +28,8 @@ const Footer = () => {
                             <ul className="footer-social-icons flex flex-center">
                                 <li><a href="https://facebook.com" className="flex flex-center"><FaFacebookF/></a></li>
                                 <li><a href="https://twitter.com" className="flex flex-center"><FaTwitter/></a></li>
-                                <li><a href="https://instagram.com" className="flex flex-center"><FaInstagram/></a></li>
-                                <li><a href="https://linkedin.com" className="flex flex-center"><FaLinkedin/></a></li>
+                                <li><a href="https://instagram.com/georgeatki" className="flex flex-center"><FaInstagram/></a></li>
+                                <li><a href="https://linkedin.com/in/georgeatki" className="flex flex-center"><FaLinkedin/></a></li>
                             </ul>
                         </div>
                         <div className="footer-bottom-text">
