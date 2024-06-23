@@ -12,11 +12,14 @@
 
 .team-content{
     gap: 4rem;
-    
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 
 .team-item img{
+    padding: 20px;
     max-width: 200px;
     transition: var(--transition);
 
@@ -64,4 +67,36 @@
     .team-content{
         grid-template-columns: repeat(6,1fr);
     }
+}
+/* 
+.logo{
+    background-color: white;
+    padding: 50px;
+    border-radius: 50%;
+} */
+
+.logo::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Adjust padding size */
+    left: -10px; /* Adjust padding size */
+    right: -10px; /* Adjust padding size */
+    bottom: -10px; /* Adjust padding size */
+    background-color: white; /* Circle background color */
+    border-radius: 50%;
+    /* color: white; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* border: 10px solid black; */
+    /* z-index: 1; */
+}
+
+.logo {
+    position: relative;
+    width: 200px; /* Adjust the size as needed */
+    height: 200px; /* Adjust the size as needed */
+    /* background-size: contain; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* z-index: 1; */
+    /* background-color: white; */
 }

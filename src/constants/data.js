@@ -65,35 +65,55 @@ const features = [
 
 const team = [
     {
-        image:`${images.Mob}`,
-        name: "Matthew O'Brien",
-        post: "Vet"
+        image: `${images.UniOfBristol}`,
+        name: "University of Bristol",
+        post: "BSc Computer Science"
     },
     {
-        image:`${images.Eleanor}`,
-        name: "Eleanor Lincoln",
-        post: "Physicist"
+        image: `${images.Noggin}`,
+        name: "Noggin",
+        post: "Data Science Intern"
     },
     {
-        image:`${images.Alanah}`,
-        name: "Alanah Hammond",
-        post: "Reporter"
+        image: `${images.ShapePerformance}`,
+        name: "Shape Performance",
+        post: "Sports Coach"
     },
     {
-        image:`${images.John}`,
-        name: "John Carr",
-        post: "Runner"
+        image: `${images.StMarys}`,
+        name: "St Mary's Catholic School",
+        post: "Secondary School"
     },
-    {
-        image:`${images.George}`,
-        name: "George Atkinson",
-        post: "Goat"
-    },
-    {
-        image:`${images.Gabi}`,
-        name: "Gabi Nagy",
-        post: "Aussie rep"
-    },
+    // {
+    //     image:`${images.Mob}`,
+    //     name: "Matthew O'Brien",
+    //     post: "Vet"
+    // },
+    // {
+    //     image:`${images.Eleanor}`,
+    //     name: "Eleanor Lincoln",
+    //     post: "Physicist"
+    // },
+    // {
+    //     image:`${images.Alanah}`,
+    //     name: "Alanah Hammond",
+    //     post: "Reporter"
+    // },
+    // {
+    //     image:`${images.John}`,
+    //     name: "John Carr",
+    //     post: "Runner"
+    // },
+    // {
+    //     image:`${images.George}`,
+    //     name: "George Atkinson",
+    //     post: "Goat"
+    // },
+    // {
+    //     image:`${images.Gabi}`,
+    //     name: "Gabi Nagy",
+    //     post: "Aussie rep"
+    // },
 ]
 
 const data = {about_me, features, team, header};

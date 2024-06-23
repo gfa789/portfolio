@@ -69,6 +69,7 @@
     right: 2rem;
     top: 2rem;
     transition: var(--transition);
+    color: var(--text-white)
 }
 
 .navbar-collapse .navbar-hide-btn:hover {

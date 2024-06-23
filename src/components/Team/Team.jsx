@@ -19,7 +19,7 @@ const Team = () => {
                         data.team.map((item,index) => {
                             return(
                                 <div className="team-item text-center text-dark" key = {index} data-aos="flip-up">
-                                    <img src= {item.image} alt="" className="mx-auto"/>
+                                    <img src= {item.image} alt="" className="mx-auto logo"/>
                                     <p className="text-upper fw-7"> {item.name}</p>
                                     <span className="text-upper">
                                         {item.post}

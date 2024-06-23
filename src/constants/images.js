@@ -25,6 +25,16 @@ import Wine from "../assets/images/winestock.jpg";
 import Cricket from "../assets/images/cricket.jpg";
 import Glasto from "../assets/images/glasto.jpg";
 
-const images =  {Logo_Black, Profile_pub, Creama, Split, Prague, Beers, Thekla, George, Alanah, Mob, Eleanor, Gabi, John, TheklaTwo, Glasto, Wine, Cricket};
+import StMarys from "../assets/images/marys.png"
+
+import ShapePerformance from "../assets/images/sp.png"
+
+import UniOfBristol from "../assets/images/bris.png"
+
+import Noggin from "../assets/images/nhq.png"
+
+const images =  {Logo_Black, Profile_pub, Creama, Split, Prague, Beers, Thekla, George, 
+    Alanah, Mob, Eleanor, Gabi, John, TheklaTwo, Glasto, Wine, Cricket, StMarys, UniOfBristol,
+ShapePerformance, Noggin};
 
 export default images;
