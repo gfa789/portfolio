@@ -62,30 +62,30 @@ const Navbar = () => {
     const [shouldShowBar, setShowBar] = useState(true);
     
 
-  const handleScroll = () => {
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
-        
-         const navbarOffset = navbar.offsetTop;
-         const currentScrollPos = window.scrollY;
-         const isOffset = window.scrollY >= navbarOffset +100; // Offset value of 100px
-         const scrollDirection = (prevScrollPos.current > currentScrollPos) ? 'up' : 'down';
-         const shouldHideNavbar = scrollDirection === 'down' && currentScrollPos > 510 && isWide;
-         console.log(scrollDirection, prevScrollPos, currentScrollPos);
-         prevScrollPos.current = currentScrollPos
-         setIsOffsetReached(isOffset);
-         setIsSticky(isOffset || window.scrollY >= navbarOffset);
-         setShowBar(!shouldHideNavbar);
-         
-    }
-  };
-
+  
   useEffect(() => {
+    const handleScroll = () => {
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            
+             const navbarOffset = navbar.offsetTop;
+             const currentScrollPos = window.scrollY;
+             const isOffset = window.scrollY >= navbarOffset +100; // Offset value of 100px
+             const scrollDirection = (prevScrollPos.current > currentScrollPos) ? 'up' : 'down';
+             const shouldHideNavbar = scrollDirection === 'down' && currentScrollPos > 510 && isWide;
+             console.log(scrollDirection, prevScrollPos, currentScrollPos);
+             prevScrollPos.current = currentScrollPos
+             setIsOffsetReached(isOffset);
+             setIsSticky(isOffset || window.scrollY >= navbarOffset);
+             setShowBar(!shouldHideNavbar);
+             
+        }
+      };    
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isWide]);
     return (
         <nav className ="navbar">
             <div id="navbar" className={`nav-container flex navbar-content ${shouldShowBar ? "" : "hidden"} ${isSticky ? 'sticky' : (isOffsetReached ? 'sticky-offset' : '')}`}>
