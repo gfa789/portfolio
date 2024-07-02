@@ -56,7 +56,7 @@ const Navbar = () => {
     const handleClick = () => setClick(!click);
     const close = () => setClick(false);
 
-    const [isSticky, setIsSticky] = useState(false);
+    const [isSticky, setIsSticky] = useState(true);
     const [isOffsetReached, setIsOffsetReached] = useState(false);
     const prevScrollPos = useRef(window.scrollY);
     const [shouldShowBar, setShowBar] = useState(true);
@@ -108,25 +108,27 @@ const Navbar = () => {
                     </button>
                     <ul className='navbar-nav fw-6 ls-1 fs-20 text-center'>
                         <li className = "nav-item">
-                            <a href = "#header" className='nav-link'>
+                            <a href = "#header" className='nav-link' onClick={close}>
                                 <p className={`${click ?"nav-item-text":"nav-item-text-inverted"} `}>home</p>
                             </a>
                         </li>
                         <li className = "nav-item">
-                            <a href = "#about-me" className='nav-link'>
-                            <p className={`${click ?"nav-item-text":"nav-item-text-inverted"} `}>about me</p>
+                            <a href = "#team" className='nav-link' onClick={close}>
+                            <p className={`${click ?"nav-item-text":"nav-item-text-inverted"} `}>associates</p>
                             </a>
                         </li>
                         <li className = "nav-item">
-                            <a href = "#features" className='nav-link'>
+                            <a href = "#features" className='nav-link' onClick={close}>
                             <p className={`${click ?"nav-item-text":"nav-item-text-inverted"} `}>features</p>
                             </a>
                         </li>
                         <li className = "nav-item">
-                            <a href = "#team" className='nav-link'>
-                            <p className={`${click ?"nav-item-text":"nav-item-text-inverted"} `}>associates</p>
+                            <a href = "#about-me" className='nav-link' onClick={close}>
+                            <p className={`${click ?"nav-item-text":"nav-item-text-inverted"} `}>about me</p>
                             </a>
                         </li>
+                        
+                        
                         <li className="nav-item">
                             {/* <a > */}
                                 {/* {theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
