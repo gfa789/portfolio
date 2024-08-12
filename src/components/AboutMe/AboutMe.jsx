@@ -2,17 +2,20 @@ import React from "react";
 import data from "../../constants/data";
 // import data from"../../constants/data";
 import "./AboutMe.css";
+import { useTheme } from "../../utilities/ThemeContext";
+
 
 const AboutMe = () => {
+    const {isDarkMode, toggleDarkMode} = useTheme()
     return (
-        <section className ="about-me bg-medium py-6" id = "about-me">
+        <section className ={`about-me bg-medium py-6 ${isDarkMode?'dark':'light'}`} id = "experience">
             <div className="gradient-div-1">
             
             </div>
             <div className="container">
                 <div className="section-title text-center bg-dark">
                     <h2 className="text-upper text-white">
-                        about me
+                        My Experience
                     </h2>
                 </div>
                 {data.about_me.map((whatItem, index) => {
@@ -24,7 +27,7 @@ const AboutMe = () => {
                         <div className="about-me-item-right text-center" data-aos="fade-right">
                             <h4 className=" text-upper fs-20"> {whatItem.title}</h4>
                             <p className="text mx-auto"> {whatItem.paragraph} </p>
-                            <a href = "#test" className="btn btn-dark"> view more</a>
+                            {/* <a href = "#test" className="btn btn-dark"> view more</a> */}
                         </div>
                     </div>)
                 })

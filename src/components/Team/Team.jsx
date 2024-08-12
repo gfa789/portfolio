@@ -1,17 +1,20 @@
 import React from "react";
 import "./Team.css";
 import data from "../../constants/data";
+import { useTheme } from '../../utilities/ThemeContext';
 
 const Team = () => {
+    
+  const { isDarkMode, toggleDarkMode } = useTheme();
     return(
-        <section className ="team py-6 bg-white" id = "team">
-            <div className="gradient-div-3">
+        <section className ={`team py-6 bg-white ${isDarkMode ? 'dark' : 'light'}`} id = "overview">
+            {/* <div className="gradient-div-3">
             
-            </div>
+            </div> */}
             <div className = "container">
                 <div className ="section-title bg-dark">
                     <h2 className = "text-upper text-white text-center">
-                        My Experience
+                        Experience Overview
                     </h2>
                 </div>
                 <div className="team-content py-6 grid">

@@ -1,22 +1,24 @@
 .gradient-div-1{
-    background-image: linear-gradient(to bottom, var(--dark-color), var(--orange-color));
+    background-image: linear-gradient(to bottom, var(--navbar-color), var(--bg-pink-color));
     padding: 100px;
     min-height: 150px;
 }
 
 .about-me {
     padding-top:0px;
-    background-color: var(--orange-color);
+    background-color: var(--bg-pink-color);
+    color: var(--text-color);
 }
 
 .about-me-item{
     padding: 6rem 0;
     gap: 6rem;
-    color: var(--white-color);
+    color: var(--text-color);
 }
 
 .about-me-item img{
-    max-width: 520px;
+    max-height: 300px;
+    width:auto;
 }
 
 .about-me-item .text{

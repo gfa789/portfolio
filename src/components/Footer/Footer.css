@@ -1,5 +1,7 @@
 .footer{
     padding-top:0px;
+    background-color: var(--navbar-color);
+    color: var(--text-color)
 }
 
 .footer-item-group{
@@ -60,7 +62,7 @@
 }
 
 .gradient-div-4{
-    background-image: linear-gradient(to top, var(--dark-color), var(--orange-color));
+    background-image: linear-gradient(to bottom, var(--bg-pink-color), var(--navbar-color));
     padding: 100px;
     min-height: 150px;
 }

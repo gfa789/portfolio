@@ -8,15 +8,14 @@ import AboutMe from './components/AboutMe/AboutMe';
 import Features from './components/Features/Features';
 import Team from './components/Team/Team';
 import Footer from './components/Footer/Footer';
-import Signin from './components/Signin/Signin';
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import RootLayout from './layout/RootLayout';
 import Error404 from './components/Error404/Error404';
-import Register from './components/Register/Register';
-import CallbackPage from "./components/CallbackPage/callback-page";
 import Navbar from './components/Navbar/Navbar';
-import Email from './components/Email/Email';
+// import Email from './components/Email/Email';
+import {ThemeProvider} from './utilities/ThemeContext';
+import {ScrollProvider} from './utilities/ScrollContext';
 
 import {useState} from 'react';
 
@@ -25,18 +24,16 @@ AOS.init();
 function App() {
   const [showPopup, setShowPopup] = useState(false);
 
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
-  };
   return (
-    <div className={`app ${showPopup ? "freeze" : ""}`}>
+    <div>
+      <ThemeProvider>
+      <ScrollProvider>
       <Routes>
-        <Route index element ={<><Navbar/><Header onButtonClick={togglePopup}/><Email show={showPopup} onClose={togglePopup} /><Team/><Features /><AboutMe/><Footer/></>}/>
-        <Route path="/sign-in" element ={<><Navbar/><Signin /></>}/>
-        <Route path="/register" element ={<><Navbar/><Register /></>}/>
-        <Route path="/callback" element ={<><Navbar/><CallbackPage /></>}/>
+        <Route index element ={<><Navbar/><Header/><Team/><Features /><AboutMe/><Footer/></>}/>
         <Route path="/*" element = {<><Navbar/><Error404/></>}/>
       </Routes>
+      </ScrollProvider>
+      </ThemeProvider>
     </div>
   );
 }

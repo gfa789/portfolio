@@ -1,5 +1,5 @@
 import images from "./images";
-
+import Pdfs from "./pdfs";
 
 const header = [
     {
@@ -9,24 +9,24 @@ const header = [
 
 const about_me = [
     {
-        image: `${images.Split}`,
+        image: `${images.UniOfBristol}`,
         title: "University of Bristol",
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        paragraph: "During this time, I studied BSc Computer Science. I studied a broad range of modules, including data science, algorithms, and software engineering. In my final year, I wrote my disseration on the topic of deep learning (you can read more about this in the projects section). As a result of my hard work, I was awarded a high 2:1 (67%) with honours."
     },
     {
-        image: `${images.Wine}`,
+        image: `${images.Noggin}`,
         title: "NogginHQ",
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        paragraph: "This was an internship I undertook in the summer of 2023. I worked independently on SEO, as well as data scraping for live updates to their database."
     },
     {
-        image: `${images.Beers}`,
+        image: `${images.ShapePerformance}`,
         title: "Shape Performance",
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        paragraph: "This is a job primarily for the summer, which helped to fund my university studies. I was given the role of a sports coach, and had to manage and supervise large groups of children."
     },
     {
-        image: `${images.Split}`,
+        image: `${images.StMarys}`,
         title: "St Mary's Catholic School",
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        paragraph: "My secondary school was a place that allowed me to thrive throughout GCSES and A-Levels. I achieved 3 A*'s at A-level, in Maths, Further Maths, and Physics. In addition, I achieved 2 A's, one in my EPQ, and the other in Thinking Skills. Finally, in my GCSEs I achieved four 9's, seven 8's, and one 7 - with 9's in both English and Maths."
     }
 ]
 
@@ -34,32 +34,44 @@ const features = [
     {
         image: `${images.Cricket}`,
         title: "Deep Learning for UIE",
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        paragraph: "My dissertation studying use of GANs for underwater image enhancement",
+        link: Pdfs.Dissertation,
+        filename: 'dissertation.pdf'
     },
     {
         image: `${images.Wine}`,
         title: "ML for Weather Forecasting",
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        paragraph: "Applied Data Science project from MET Office exploring methods for forecasting.",
+        link: Pdfs.ADS,
+        filename: 'ads.pdf'
     },
     {
         image: `${images.Beers}`,
         title: "ML Model Analysis",
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        paragraph: "Machine learning coursework exploring effectiveness of a variety of models for different data",
+        link: Pdfs.ML,
+        filename: "ml-coursework.pdf"
     },
     {
         image: `${images.Split}`,
         title: "Dartboard Detector",
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        paragraph: "Exploring classical computer vision methods for detecting dartboards in images",
+        link: Pdfs.IPCV1,
+        filename: "dartboard.pdf"
     },
     {
         image: `${images.Beers}`,
-        title: "Cloud-based Concurrent Game of Life",
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        title: "Scene Reconstruction",
+        paragraph: "Using stereo vision to reconstruct a 3-Dimensional scene.",
+        link: Pdfs.IPCV2,
+        filename:"stereovision.pdf"
     },
     {
         image: `${images.Split}`,
         title: "Software Engineering Project",
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        paragraph: "Creating a full-stack web application for the university vet school's database",
+        link: Pdfs.SPE,
+        filename:"spe.pdf"
     }
 ]
 

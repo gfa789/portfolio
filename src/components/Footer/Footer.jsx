@@ -1,10 +1,12 @@
 import React from "react";
 import "./Footer.css";
 import {FaFacebookF, FaTwitter, FaInstagram, FaLinkedin} from "react-icons/fa";
+import { useTheme } from "../../utilities/ThemeContext";
 
 const Footer = () => {
+    const {isDarkMode, toggleDarkMode} = useTheme();
     return(
-        <footer className ="footer bg-dark text-white py-6" id="footer">
+        <footer className ={`footer bg-dark text-white py-6 ${isDarkMode? 'dark' : 'light'}`} id="footer">
             
             <div className="gradient-div-4">
                 

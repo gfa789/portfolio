@@ -1,157 +1,86 @@
-import React, {useState, useEffect, useRef} from 'react';
-// import images from "../../assets/images";
-import "./Navbar.css";
-import {FaBars, FaTimes} from "react-icons/fa";
-// import {CgProfile} from "react-icons/cg";
+import React, { useState, useEffect } from 'react';
+import { useTheme } from '../../utilities/ThemeContext';
+import { useScroll } from '../../utilities/ScrollContext';
+import './Navbar.css';
 import LoadingBar from '../LoadingBar/LoadingBar';
-// import LoginButton from '../Buttons/LoginButton';
-// import SignupButton from '../Buttons/SignupButton';
-
-// const useWindowWidth = () => {
-//     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  
-//     useEffect(() => {
-//       const handleResize = () => setWindowWidth(window.innerWidth);
-//       window.addEventListener('resize', handleResize);
-//       return () => window.removeEventListener('resize', handleResize);
-//     }, []);
-
-//     return windowWidth;
-//   };
+import { FaBars } from 'react-icons/fa';
 
 const Navbar = () => {
-    const [click, setClick] = useState(false);
-    const [theme, setTheme] = useState('light')
-    // const [bigwidth, setBigWidth] = useState(true);
+  const { isDarkMode, toggleDarkMode } = useTheme();
+  const { toggleScroll } = useScroll();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-    // const windowWidth = useWindowWidth();
-    // const isWidthGreaterThanX = windowWidth < 992;
-    // if (windowWidth < 992){
-    //     setClick(false);}
-
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-      }, [theme]);
-    
-    const toggleTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
-      };
-
-    const [isWide, setIsWide] = useState(window.innerWidth > 992); 
-
-    useEffect(() => {
-        const handleResize = () => {
-        setIsWide(window.innerWidth >= 992); 
-        };
-    
-        window.addEventListener('resize', handleResize);
-    
-        // Cleanup the event listener on component unmount
-        return () => {
-        window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-    
-    const handleClick = () => setClick(!click);
-    const close = () => setClick(false);
-
-    const [isSticky, setIsSticky] = useState(true);
-    const [isOffsetReached, setIsOffsetReached] = useState(false);
-    const prevScrollPos = useRef(window.scrollY);
-    const [shouldShowBar, setShowBar] = useState(true);
-    
-
-  
   useEffect(() => {
-    const handleScroll = () => {
-        const navbar = document.getElementById('navbar');
-        if (navbar) {
-            
-             const navbarOffset = navbar.offsetTop;
-             const currentScrollPos = window.scrollY;
-             const isOffset = window.scrollY >= navbarOffset +100; // Offset value of 100px
-             const scrollDirection = (prevScrollPos.current > currentScrollPos) ? 'up' : 'down';
-             const shouldHideNavbar = scrollDirection === 'down' && currentScrollPos > 510 && isWide;
-             console.log(scrollDirection, prevScrollPos, currentScrollPos);
-             prevScrollPos.current = currentScrollPos
-             setIsOffsetReached(isOffset);
-             setIsSticky(isOffset || window.scrollY >= navbarOffset);
-             setShowBar(!shouldHideNavbar);
-             
-        }
-      };    
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      if (window.innerWidth >= 768 && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+        toggleScroll(); // Re-enable scrolling if resized to desktop while menu was open
+      }
     };
-  }, [isWide]);
-    return (
-        <nav className ="navbar">
-            <div id="navbar" className={`nav-container flex navbar-content ${shouldShowBar ? "" : "hidden"} ${isSticky ? 'sticky' : (isOffsetReached ? 'sticky-offset' : '')}`}>
-                <div className="brand-and-toggler flex">
-                    <a href = "/" alt = "" className="navbar-brand text-upper fw-7 fs-22 flex">
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial check
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMobileMenuOpen, toggleScroll]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    toggleScroll(); // Toggle scroll when opening/closing mobile menu
+  };
+
+  return (
+    <nav className={`navbar ${isDarkMode ? 'dark' : 'light'}`}>
+      <div className="navbar-container">
+        <a href = "/" alt = "" className="navbar-brand text-upper fw-7 fs-22 flex">
                         <span className="text-white">George</span>
                         <span className="text-white">Atkinson</span>
-                    </a>
-                    <button type = "button"
-                    className = "navbar-show-btn text-white"
-                    onClick = {() => handleClick()}>
-                        <FaBars size = {26}/>
-                    </button>
-                </div>
-                <div className={`navbar-collapse flex flex-center ${click ?"show-navbar":""}`}>
-                    <button type ="button"
-                    className="navbar-hide-btn text-white"
-                    onClick={() => close()}>
-                        <FaTimes size={32}/>
-                    </button>
-                    <ul className='navbar-nav fw-6 ls-1 fs-20 text-center'>
-                        <li className = "nav-item">
-                            <a href = "#header" className='nav-link' onClick={close}>
-                                <p className={`${click ?"nav-item-text":"nav-item-text-inverted"} `}>home</p>
-                            </a>
-                        </li>
-                        <li className = "nav-item">
-                            <a href = "#team" className='nav-link' onClick={close}>
-                            <p className={`${click ?"nav-item-text":"nav-item-text-inverted"} `}>associates</p>
-                            </a>
-                        </li>
-                        <li className = "nav-item">
-                            <a href = "#features" className='nav-link' onClick={close}>
-                            <p className={`${click ?"nav-item-text":"nav-item-text-inverted"} `}>features</p>
-                            </a>
-                        </li>
-                        <li className = "nav-item">
-                            <a href = "#about-me" className='nav-link' onClick={close}>
-                            <p className={`${click ?"nav-item-text":"nav-item-text-inverted"} `}>about me</p>
-                            </a>
-                        </li>
-                        
-                        
-                        <li className="nav-item">
-                            {/* <a > */}
-                                {/* {theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
-                                 */}
-                                 <label class="switch">
-                                <input type="checkbox" onClick={toggleTheme} className='nav-link'/>
-                                <span class="slider round"></span>
-                                </label>
-                            {/* </a> */}
-                        </li>
-                        {/* <li className = "nav-item">
-                            <LoginButton />
-                        </li>
-                        <li className = "nav-item">
-                            <SignupButton />
-                        </li> */}
-                    </ul>
-                </div>
-                <LoadingBar/>
-            </div>
-            
-        </nav>
-    )
-}
+        </a>
+        
+        
+        {isMobile ? (
+            <button type = "button"
+            className = "menu-toggle"
+            onClick = {toggleMobileMenu}>
+                <FaBars size = {26}/>
+            </button>
+        //   <button className="menu-toggle" onClick={toggleMobileMenu}>
+        //     {isMobileMenuOpen ? 'Close' : 'Menu'}
+        //   </button>
+        ) : (
+          <div className="navbar-links">
+            <a className = "nav-item-text" href="#header">Home</a>
+            <a className = "nav-item-text" href="#overview">Overview</a>
+            <a className = "nav-item-text" href="#projects">Projects</a>
+            <a className = "nav-item-text" href="#experience">Experience</a>
+            <a className='nav-item-text'>
+            <label class="switch">
+            <input type="checkbox" onClick={toggleDarkMode} className='nav-link'/>
+            <span class="slider round"></span>
+            </label></a>
+          </div>
+        )}
+
+        
+      </div>
+
+      {isMobile && isMobileMenuOpen && (
+        <div className="mobile-menu">
+          <a className = "nav-item-text" href="#header" onClick={toggleMobileMenu}>Home</a>
+            <a className = "nav-item-text" href="#overview" onClick={toggleMobileMenu}>Overview</a>
+            <a className = "nav-item-text" href="#projects" onClick={toggleMobileMenu}>Projects</a>
+            <a className = "nav-item-text" href="#experience" onClick={toggleMobileMenu}>Experience</a>
+          <label class="switch">
+            <input type="checkbox" onClick={toggleDarkMode} className='nav-link'/>
+            <span class="slider round"></span>
+            </label>
+        </div>
+      )}
+      <LoadingBar />
+    </nav>
+  );
+};
 
 export default Navbar;
