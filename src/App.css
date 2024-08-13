@@ -1,9 +1,10 @@
 .container{
   max-width: 1200px;
-  margin: 0 auto;
+  /* justify-content: center; */
+  margin: auto auto;
   padding: 0 2rem;
-  margin-left: 15rem;
-  margin-right: 15rem;
+  /* margin-left: 15rem; */
+  /* margin-right: 15rem; */
   /* border-left: #000 5px solid;
   border-right: #000 5px solid; */}
 
